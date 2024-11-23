@@ -34,7 +34,7 @@ export const kanbanBoard = [
         description: "Description of Task 6",
       },
       {
-        id: "1-6",
+        id: "1-7",
         title: "Task 7",
         description: "Description of Task 7",
       },

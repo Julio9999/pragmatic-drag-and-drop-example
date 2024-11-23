@@ -1,19 +1,20 @@
 import { KanbanColumn } from "./kanban-column";
-import { KanbanItem } from "./kanban-item";
-import { kanbanBoard } from '../../../../data/kanban-data';
+import { useKanbanStore } from "../../../stores/kanban.store";
 
 
 export const Kanban = () => {
+
+    const kanbanColumnsIds = useKanbanStore(store => store.kanbanColumnsIds);
+
     return (
-        <div className="flex gap-6 items-center justify-center pt-14 h-screen">
-            {kanbanBoard.map(item  => (
-                <KanbanColumn title={item.title} key={item.id} id={item.id}>
-                    {item.items.map(item => (
-                        <KanbanItem title={item.title} description={item.description} id={item.id} />
-                    ))}
-                </KanbanColumn> 
+        <div className="flex gap-6 pt-14 h-screen w-screen border-red-500 border-2 overflow-auto">
+            {kanbanColumnsIds.map((column, index) => (
+                <KanbanColumn
+                    index={index}
+                    key={column}
+                />
             ))}
         </div>
-        
+
     )
 }
