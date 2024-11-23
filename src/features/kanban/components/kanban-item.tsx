@@ -5,14 +5,15 @@ interface Props {
     description: string;
     id: string;
     columnId: string;
+    style?: React.CSSProperties;
 }
 
-export const KanbanItem = ({title, description, id, columnId}: Props) => {
+export const KanbanItem = ({title, description, id, columnId, style}: Props) => {
 
     const { ref } = useKanbanItem({columnId, id})
 
     return (
-        <div data-id={id} className="border-green-500 border" ref={ref}>
+        <div data-id={id} className="border-green-500 border max-h-14" ref={ref} style={style}>
             <p>{title}</p>
             <p>{description}</p>
         </div>

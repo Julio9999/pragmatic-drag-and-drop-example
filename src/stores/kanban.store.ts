@@ -19,7 +19,7 @@ interface KanbanState {
     updateItem: (from: string, to: string, itemId: string) => void;
 }
 
-const initialKanbanBoard = generateKanbanBoard(100, 50)
+const initialKanbanBoard = generateKanbanBoard(15, 1000)
 
 
 const KanbanStoreApi: StateCreator<KanbanState> = (set) => ({
